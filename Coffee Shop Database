@@ -1,0 +1,29 @@
+-Create coffee shop database.
+
+CREATE TABLE coffee_shop (id INTEGER PRIMARY KEY, item_name TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO coffee_shop VALUES (1, "Latte", 10, 3.00);
+INSERT INTO coffee_shop VALUES (2, "cappuccino", 12, 2.00);
+INSERT INTO coffee_shop VAlUES (3, "cold brew", 9, 3.50);
+INSERT INTO coffee_shop VALUES (4, "iced coffee", 8, 2.50);
+INSERT INTO coffee_shop VALUES (5, "nitro", 8, 4.00);
+INSERT INTO coffee_shop VALUES (6, "iced latte", 10, 3.50);
+INSERT INTO coffee_shop VALUES (7, "cortado", 6, 3.00);
+INSERT INTO coffee_shop VALUES (8, "espresso", 5, 3.50);
+INSERT INTO coffee_shop VALUES (9, "coffee frappe", 11, 4.50);
+INSERT INTO coffee_shop VALUES (10, "mocha frappe", 9, 4.50);
+INSERT INTO coffee_shop VALUES (11, "caramel frappe", 10, 4.50);
+INSERT INTO coffee_shop VALUES (12, "toffee frappe", 7, 4.50);
+INSERT INTO coffee_shop VALUES (13, "whole bean", 6, 7.00);
+INSERT INTO coffee_shop VALUES (14, "coffee mug", 5, 10.00);
+INSERT INTO coffee_shop Values (15, "assort. bread", 6, 5.00);
+
+-List item by order of price.
+
+SELECT * FROM coffee_shop;
+
+SELECT * FROM coffee_shop WHERE price >= 2 ORDER BY price asc;
+
+-List number of items that are the same price.
+
+SELECT price, SUM (quantity) From coffee_shop GROUP BY price;
