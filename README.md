@@ -1,4 +1,4 @@
-# My SQL Portfolio!
+# My Data Analytics Portfolio!
 
 My name is Marleny Ramos and this is my portofolio! 
 
