@@ -213,10 +213,9 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 INSERT INTO countries(name,population,percent_one_year_change,population_change,density_per_sq_km,area_sq_km,net_migrants,fertility_rate,median_age,percent_of_world_pop) VALUES ('Antigua and Barbuda',97929,0.84,811,223,440,0,2.00,34.00,0);
 
 
-SELECT population, SUM(population) AS World_Population FROM countries;
+SELECT COUNT(*) FROM population, SUM(population) AS World_Population FROM countries;
 
 SELECT name, AVG(median_age) AS Average_Age_Per_Country From countries Group BY name;
-
 
 SELECT name, AVG(median_age) AS Average_Age_Over_50 From countries 
     Group BY name
