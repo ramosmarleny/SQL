@@ -1,0 +1,52 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name    Text,
+    movie_id Integer,
+    screen_name  Text,
+    buddy_id INTEGER
+);
+
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Zoe Saldana", 1, "Gamora", 2);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Chris Pratt", 1, "Starlord", 1);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Chris Hemsworth", 2, "Thor", 4);
+INSERT INTO famous_people (name, movie_id,  screen_name, buddy_id) VALUES ("Tom Hiddleston", 2, "Loki", 3);
+INSERT INTO famous_people (name, movie_id, screen_name,buddy_id) VALUES ("Scarlet Johansson", 3, "Black Widow", 6);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Chris Evans", 3, "Captain America", 5);
+
+CREATE table movie (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    year INTEGER,
+    title TEXT);
+
+INSERT into movie (year, title) VALUES (2014, "Gaurdians of the Galaxy");
+INSERT into movie (year, title) VALUES (2011, "Thor");
+INSERT into movie (year, title) VALUES (2012, "The Avengers");
+
+/* Join */ 
+SELECT famous_people.name, famous_people.screen_name, movie.title From famous_people
+JOIN movie
+ON famous_people.movie_id = movie.id;
+
+/* Self Join */
+SELECT id, name, movie_id, screen_name, buddy_id FROM famous_people;
+
+SELECT famous_people.name, famous_people.screen_name, movie.name, movie.screen_name
+FROM famous_people
+JOIN famous_people movie
+ON famous_people.buddy_id = movie.id;
+
+CREATE TABLE movie_pairs (id INTEGER PRIMARY KEY, 
+movie1_id INTEGER, movie2_id INTEGER);
+
+INSERT INTO movie_pairs (movie1_id, movie2_id)
+    VALUES (1,2);
+INSERT INTO movie_pairs (movie1_id, movie2_id)
+    VALUES (3,4);
+
+/* Multiple Joins */
+SELECT a.screen_name, b.screen_name FROM movie_pairs 
+    JOIN famous_people a
+    ON movie_pairs.movie1_id = a.buddy_id
+    JOIN famous_people b 
+    ON movie_pairs.movie2_id = b.buddy_id;
