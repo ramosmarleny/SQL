@@ -13,6 +13,16 @@ INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Chris
 INSERT INTO famous_people (name, movie_id,  screen_name, buddy_id) VALUES ("Tom Hiddleston", 2, "Loki", 3);
 INSERT INTO famous_people (name, movie_id, screen_name,buddy_id) VALUES ("Scarlet Johansson", 3, "Black Widow", 6);
 INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Chris Evans", 3, "Captain America", 5);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Robert Downey Jr.", 4, "Iron Man", 8);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Paul Bettany", 4, "J.A.R.V.I.S", 7);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Paul Rudd", 5, "Ant-Man", 10);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Evangeline Lilly", 5, "The Wasp", 9);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Tom Holland", 6, "Spider-Man", 12);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Zendaya", 6, "Michelle", 11);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Benedict Cumerbatch", 7, "Dr. Strange", 14);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Tilda Swinton", 7, "Ancient One", 13);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Chadwick Boseman", 8, "Black Panther", 16);
+INSERT INTO famous_people (name, movie_id, screen_name, buddy_id) VALUES ("Letitia Wright", 8, "Shuri", 15);
 
 CREATE table movie (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,6 +32,11 @@ CREATE table movie (
 INSERT into movie (year, title) VALUES (2014, "Gaurdians of the Galaxy");
 INSERT into movie (year, title) VALUES (2011, "Thor");
 INSERT into movie (year, title) VALUES (2012, "The Avengers");
+INSERT into movie (year, title) VALUES (2008, "Iron Man");
+INSERT into movie (year, title) VALUES (2015, "Ant-Man");
+INSERT into movie (year, title) VALUES (2017, "Spider-Man: Homecoming");
+INSERT into movie (year, title) VALUES (2016, "Dr. Strange");
+INSERT into movie (year, title) VALUES (2018, "Black Panther");
 
 /* Join */ 
 SELECT famous_people.name, famous_people.screen_name, movie.title From famous_people
